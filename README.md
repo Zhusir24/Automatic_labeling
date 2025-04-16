@@ -1,0 +1,2 @@
+# Automatic_labeling
+这是一个使用yoloe的自动标注示例
