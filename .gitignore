@@ -36,7 +36,7 @@ ENV/
 env/
 
 # 你的自定义规则
-app/models/**  # 双星号确保递归忽略
+app/models/
 mobileclip_blt.pt
 
 # 其他模型文件（安全防护）
