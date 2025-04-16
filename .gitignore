@@ -1,0 +1,52 @@
+# 基础 Python 项目忽略
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# 开发环境
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# 虚拟环境
+venv/
+.env/
+.venv/
+ENV/
+env/
+
+# 你的自定义规则
+app/models/​**​  # 双星号确保递归忽略
+mobileclip_blt.pt
+
+# 其他模型文件（安全防护）
+*.pt
+*.pth
+*.h5
+*.onnx
+*.weights
+
+# 配置文件防护
+config.ini
+*.env
+*.secret
