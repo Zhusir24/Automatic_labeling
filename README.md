@@ -16,7 +16,7 @@ pip install -r requirements.txt
 
 ## 🚀 基础使用
 ```commandline
-python autolabel.py \
+python main.py \
     --prompts "公交车,行人,汽车" \
     --images_folder_path ./images
 ```
