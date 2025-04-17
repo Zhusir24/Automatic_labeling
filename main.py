@@ -15,6 +15,7 @@ def main():
     parser.add_argument('--conf', type=float, help='Confidence.', required=False, default=config.default_conf)
     parser.add_argument('--images_folder_path', type=str, help='Picture storage path.', required=False, default=config.images_folder_path)
     parser.add_argument('--annotation_format', type=str, help='Annotation format.', required=False, default=config.default_annotation_format)
+    parser.add_argument('--output_folder', type=str, help='Outputs save.', required=False, default=config.outputs_path)
     args = parser.parse_args()
 
     prompts = helper.string_to_list(input_str=args.prompts)
@@ -27,7 +28,7 @@ def main():
 
     yoloe.init_model(model_name=args.model_name,names=prompts)
 
-    yoloe.predict_image(images_path=images_path, conf=args.conf)
+    yoloe.predict_image(images_path=images_path, conf=args.conf, output_dir=args.output_folder)
 
 
 if __name__ == '__main__':

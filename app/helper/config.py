@@ -8,6 +8,7 @@ conf_path = os.path.join(app_path, 'conf')
 core_path = os.path.join(app_path, 'core')
 images_folder_path = os.path.join(app_path, 'images')
 models_path = os.path.join(app_path, 'models')
+outputs_path = os.path.join(path_root,'outputs')
 
 config_file_path = os.path.join(path_root, conf_path, 'config.ini')
 config = configparser.ConfigParser()
