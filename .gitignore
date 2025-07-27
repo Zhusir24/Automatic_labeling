@@ -50,3 +50,5 @@ mobileclip_blt.pt
 config.ini
 *.env
 *.secret
+
+.DS_Store
