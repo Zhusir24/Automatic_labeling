@@ -226,7 +226,13 @@ class Yoloe:
                     for idx, cls_id in enumerate(sorted(class_counter.keys())):
                         # 使用模型的names属性获取类别名称
                         if self.model and hasattr(self.model.model, 'names'):
-                            class_name = self.model.model.names.get(cls_id, f"class_{cls_id}")
+                            model_names = self.model.model.names
+                            if isinstance(model_names, dict):
+                                class_name = model_names.get(cls_id, f"class_{cls_id}")
+                            elif isinstance(model_names, (list, tuple)) and cls_id < len(model_names):
+                                class_name = model_names[cls_id]
+                            else:
+                                class_name = f"class_{cls_id}"
                         else:
                             class_name = self.class_names[cls_id] if cls_id < len(self.class_names) else f"class_{cls_id}"
                         
@@ -260,7 +266,13 @@ class Yoloe:
                     if hasattr(result, 'names') and original_cls_id in result.names:
                         original_class_name = result.names[original_cls_id]
                     elif self.model and hasattr(self.model.model, 'names'):
-                        original_class_name = self.model.model.names.get(original_cls_id, f"class_{original_cls_id}")
+                        model_names = self.model.model.names
+                        if isinstance(model_names, dict):
+                            original_class_name = model_names.get(original_cls_id, f"class_{original_cls_id}")
+                        elif isinstance(model_names, (list, tuple)) and original_cls_id < len(model_names):
+                            original_class_name = model_names[original_cls_id]
+                        else:
+                            original_class_name = f"class_{original_cls_id}"
                     else:
                         original_class_name = self.class_names[original_cls_id] if original_cls_id < len(self.class_names) else f"class_{original_cls_id}"
                     
